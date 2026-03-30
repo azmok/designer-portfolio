@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", -apple-system, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "IBM Plex Mono", monospace;
+}
+
+:root {
+  --bg: #ffffff;
+  --fg: #000000;
+  --ui: #cccccc;
+  --pulse-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark {
+  --bg: #000000;
+  --fg: #ffffff;
+  --ui: #333333;
+  --pulse-color: rgba(255, 255, 255, 0.05);
+}
+
+* {
+  cursor: crosshair;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.4;
+}
+
+.live-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #00ff00;
+  border-radius: 50%;
+  margin-right: 8px;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+.line {
+  height: 1px;
+  background: var(--ui);
+  flex: 1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.index-item:hover .line {
+  transform: scaleX(1);
+  background: var(--fg);
+}
+
+.pulse {
+  position: fixed;
+  top: 50%;
+  left: 70%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--pulse-color) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -1;
+  animation: pulse-glow 8s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+  50% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.6; }
+}
