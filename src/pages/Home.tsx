@@ -7,7 +7,7 @@ export function Home() {
         DESIGNER
 			  <br />PORTFOLIO.
       </h1>
-      <p className="text-[13px] leading-relaxed max-w-[500px] opacity-70">
+      <p className="text-[13px] leading-relaxed max-w-[500px] opacity-70 font-japanese-sans">
         次世代の体験を設計する、クリエイティブ・デザイナー。最小限の美学と直感的な体験を追求しています。
       </p>
 

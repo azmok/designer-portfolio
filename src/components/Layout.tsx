@@ -42,8 +42,8 @@ export function Layout() {
       </main>
 
       <footer className="flex justify-between items-end">
-        <a href="mailto:hello@example.com" className="text-xl md:text-2xl border-b border-[var(--fg)] pb-1">
-          Get in touch.
+        <a href="mailto:hello@example.com" className="text-xl md:text-2xl border-b border-[var(--fg)] pb-1 font-japanese-sans">
+          お問い合わせ
         </a>
         <div className="font-mono text-[10px] text-[var(--ui)] text-right">
           ESTABLISHED 2024<br />
